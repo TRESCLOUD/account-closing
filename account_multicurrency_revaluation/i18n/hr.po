@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * account_multicurrency_revaluation
-# 
+#
 # Translators:
 # Bole <bole@dajmi5.com>, 2017
 # OCA Transbot <transbot@odoo-community.org>, 2017
@@ -9,15 +9,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-06 01:40+0000\n"
-"PO-Revision-Date: 2017-12-06 01:40+0000\n"
+"POT-Creation-Date: 2018-04-20 22:12+0000\n"
+"PO-Revision-Date: 2018-04-20 22:12+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Croatian (https://www.transifex.com/oca/teams/23907/hr/)\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: hr\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_currency_revaluation_wizard
@@ -88,7 +89,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:account_multicurrency_revaluation.currency_urealized_report_launcher_wizard
 #: model:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_currency_revaluation_wizard
 msgid "Cancel"
-msgstr ""
+msgstr "Otkaži"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.model,name:account_multicurrency_revaluation.model_res_company
@@ -98,24 +99,24 @@ msgstr "Poduzeća"
 #. module: account_multicurrency_revaluation
 #: model:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized
 msgid "Company"
-msgstr ""
+msgstr "Tvrtka"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized
 msgid "Company currency"
-msgstr ""
+msgstr "Valuta tvrtke"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_unrealized_report_printer_create_uid
 #: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation_create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Kreirao"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_unrealized_report_printer_create_date
 #: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation_create_date
 msgid "Created on"
-msgstr ""
+msgstr "Kreirano"
 
 #. module: account_multicurrency_revaluation
 #: code:addons/account_multicurrency_revaluation/wizard/wizard_currency_revaluation.py:326
@@ -131,7 +132,7 @@ msgstr ""
 #. module: account_multicurrency_revaluation
 #: model:ir.model,name:account_multicurrency_revaluation.model_res_currency
 msgid "Currency"
-msgstr ""
+msgstr "Valuta"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized
@@ -161,7 +162,7 @@ msgstr ""
 #. module: account_multicurrency_revaluation
 #: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_account_move_line_gl_currency_rate
 msgid "Currency rate"
-msgstr ""
+msgstr "Tečaj valute"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.actions.act_window,name:account_multicurrency_revaluation.action_view_account_currency_revaluation_wizard
@@ -174,7 +175,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_unrealized_report_printer_display_name
 #: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Naziv"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation_label
@@ -196,12 +197,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_unrealized_report_printer_id
 #: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation_id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation_journal_id
 msgid "Journal"
-msgstr ""
+msgstr "Dnevnik"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.model,name:account_multicurrency_revaluation.model_account_move_line
@@ -241,8 +242,8 @@ msgstr ""
 #: code:addons/account_multicurrency_revaluation/wizard/wizard_currency_revaluation.py:277
 #, python-format
 msgid ""
-"No account to be revaluated found. Please check 'Allow Currency Revaluation'"
-" for at least one account in account form."
+"No account to be revaluated found. Please check 'Allow Currency Revaluation' "
+"for at least one account in account form."
 msgstr ""
 
 #. module: account_multicurrency_revaluation
@@ -262,7 +263,8 @@ msgstr ""
 #, python-format
 msgid ""
 "No revaluation or provision account are defined for your company.\n"
-"You must specify at least one provision account or a couple of provision account."
+"You must specify at least one provision account or a couple of provision "
+"account."
 msgstr ""
 
 #. module: account_multicurrency_revaluation
@@ -270,17 +272,17 @@ msgstr ""
 msgid ""
 "Odoo will generate exchange rate difference entries for each account set as "
 "'Allow Currency revaluation'.                     If the account type is "
-"payable or receivable : 1 entry will be generated per "
-"account/currency/partner                     for other account type : 1 "
-"entry will be generated per account/currency                     You can "
-"check details of calculation thanks to the Print Currency unrealized report "
-"in the generic reports."
+"payable or receivable : 1 entry will be generated per account/currency/"
+"partner                     for other account type : 1 entry will be "
+"generated per account/currency                     You can check details of "
+"calculation thanks to the Print Currency unrealized report in the generic "
+"reports."
 msgstr ""
 
 #. module: account_multicurrency_revaluation
 #: model:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.actions.act_window,name:account_multicurrency_revaluation.currency_urealized_report_action_wizard
@@ -350,7 +352,7 @@ msgstr ""
 #. module: account_multicurrency_revaluation
 #: model:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized
 msgid "Report"
-msgstr ""
+msgstr "Izvještaj"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_account_move_line_gl_revaluated_balance
@@ -426,8 +428,8 @@ msgstr ""
 #. module: account_multicurrency_revaluation
 #: model:ir.model.fields,help:account_multicurrency_revaluation.field_wizard_currency_revaluation_label
 msgid ""
-"This label will be inserted in entries description. You can use %(account)s,"
-" %(currency)s and %(rate)s keywords."
+"This label will be inserted in entries description. You can use %(account)s, "
+"%(currency)s and %(rate)s keywords."
 msgstr ""
 
 #. module: account_multicurrency_revaluation
@@ -453,19 +455,19 @@ msgstr ""
 #. module: account_multicurrency_revaluation
 #: model:ir.model,name:account_multicurrency_revaluation.model_account_config_settings
 msgid "account.config.settings"
-msgstr ""
+msgstr "account.config.settings"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.model,name:account_multicurrency_revaluation.model_report_account_multicurrency_revaluation_report_curr_unrealized
 msgid "report.account_multicurrency_revaluation_report.curr_unrealized"
-msgstr ""
+msgstr "report.account_multicurrency_revaluation_report.curr_unrealized"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.model,name:account_multicurrency_revaluation.model_unrealized_report_printer
 msgid "unrealized.report.printer"
-msgstr ""
+msgstr "unrealized.report.printer"
 
 #. module: account_multicurrency_revaluation
 #: model:ir.model,name:account_multicurrency_revaluation.model_wizard_currency_revaluation
 msgid "wizard.currency.revaluation"
-msgstr ""
+msgstr "wizard.currency.revaluation"
