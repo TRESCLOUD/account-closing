@@ -330,6 +330,14 @@ class WizardCurrencyRevaluation(models.TransientModel):
                         self,
                         sums
                     )
+                    move_line_ids = []
+                    for id in new_ids:
+                        move_line = self.env['account.move.line'].browse(id)
+                        if move_line.account_id.user_type_id.type in ['receivable', 'payable']:
+                            move_line_ids.append(id)
+                    move_line_ids.append(sums.get('move_line_id'))
+                    move_line_ids = self.env['account.move.line'].browse(move_line_ids)
+                    move_line_ids.reconcile()
                     created_ids.extend(new_ids)
 
         if created_ids:
