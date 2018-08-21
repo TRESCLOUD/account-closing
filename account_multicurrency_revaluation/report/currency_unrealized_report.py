@@ -30,15 +30,16 @@ class ShellAccount(object):
         """Get all line account move line that are need on report for current
         account.
         """
-        sql = """Select res_partner.name,
-                   account_move_line.date,
-                   account_move_line.gl_foreign_balance,
-                   account_move_line.gl_currency_rate,
-                   account_move_line.gl_revaluated_balance,
-                   account_move_line.gl_balance,
-                   account_move_line.gl_revaluated_balance -
-                   account_move_line.gl_balance as gl_ytd_balance,
-                   res_currency.name as curr_name
+        sql = """SELECT 
+                    res_partner.name,
+                    account_move_line.date,
+                    coalesce(account_move_line.gl_foreign_balance, 0),
+                    coalesce(account_move_line.gl_currency_rate, 0),
+                    coalesce(account_move_line.gl_revaluated_balance, 0),
+                    coalesce(account_move_line.gl_balance, 0),
+                    coalesce(account_move_line.gl_revaluated_balance, 0) -
+                    coalesce(account_move_line.gl_balance, 0) as gl_ytd_balance,
+                    res_currency.name as curr_name
                  FROM account_move_line
                    LEFT join res_partner on
                      (account_move_line.partner_id = res_partner.id)
@@ -47,8 +48,6 @@ class ShellAccount(object):
                    LEFT join res_currency on
                      (account_move_line.currency_id = res_currency.id)
                  WHERE account_move_line.account_id = %s
-                   AND account_move.to_be_reversed = true
-                   AND account_move_line.gl_balance is not null
                  ORDER BY res_partner.name,
                    account_move_line.gl_foreign_balance,
                    account_move_line.date"""
