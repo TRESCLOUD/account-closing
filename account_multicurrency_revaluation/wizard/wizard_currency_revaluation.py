@@ -133,11 +133,7 @@ class WizardCurrencyRevaluation(models.TransientModel):
                          'date': form.revaluation_date,
                          'to_be_reversed': reversable}
 
-            base_line = {'name': label,
-                         'partner_id': partner_id,
-                         'currency_id': currency_id,
-                         'amount_currency': 0.0,
-                         'date': form.revaluation_date}
+            base_line = self._get_base_line(label, partner_id, currency_id, form)
 
             base_line['gl_foreign_balance'] = sums.get('foreign_balance', 0.0)
             base_line['gl_balance'] = sums.get('balance', 0.0)
@@ -169,6 +165,7 @@ class WizardCurrencyRevaluation(models.TransientModel):
                 })
             base_move['line_ids'] = [(0, 0, debit_line), (0, 0, credit_line)]
             created_move = self.env['account.move'].create(base_move)
+            created_move.ref = u'DIFERENCIAL CAMBIARIO'
             created_move.post()
             return [x.id for x in created_move.line_ids]
 
@@ -239,6 +236,20 @@ class WizardCurrencyRevaluation(models.TransientModel):
                 created_ids.extend(line_ids)
 
         return created_ids
+    
+    @api.model
+    def _get_base_line(self, label, partner_id, currency_id, form):
+        '''
+        Este metodo devuelve la linea del asiento contable a crear
+        '''
+        base_line = {
+            'name': label,
+            'partner_id': partner_id,
+            'currency_id': currency_id,
+            'amount_currency': 0.0,
+            'date': form.revaluation_date
+        }
+        return base_line
 
     @api.multi
     def revaluate_currency(self):
@@ -319,6 +330,14 @@ class WizardCurrencyRevaluation(models.TransientModel):
                         self,
                         sums
                     )
+                    move_line_ids = []
+                    for id in new_ids:
+                        move_line = self.env['account.move.line'].browse(id)
+                        if move_line.account_id.user_type_id.type in ['receivable', 'payable']:
+                            move_line_ids.append(id)
+                    move_line_ids.append(sums.get('move_line_id'))
+                    move_line_ids = self.env['account.move.line'].browse(move_line_ids)
+                    move_line_ids.reconcile()
                     created_ids.extend(new_ids)
 
         if created_ids:
