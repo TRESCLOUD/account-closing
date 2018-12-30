@@ -15,7 +15,7 @@ class WizardCurrencyRevaluation(models.TransientModel):
         """
         Get last date of previous fiscalyear
         """
-        return fields.date.today()
+        return fields.Date.context_today(self)
 
     @api.model
     def _get_default_journal_id(self):
